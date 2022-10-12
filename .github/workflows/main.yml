@@ -70,9 +70,5 @@ jobs:
           echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> ~/.npmrc
           cat ~/.npmrc
       - run: yarn install
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.PKG_TOKEN}}
       - run: yarn build
       - run: yarn publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.PKG_TOKEN}}
